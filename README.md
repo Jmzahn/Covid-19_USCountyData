@@ -6,19 +6,24 @@ Collection of datasets related to Covid-19, and a combined time series dataset c
 
 ### Hospitals.csv
 Available here: https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals
+
 Information on hospitals in the United States.
 
 ### us-counties.csv
 Available here: https://github.com/nytimes/covid-19-data
+
 Daily covid cases and death data for us counties.
 
 ### co-est2019-alldata.csv
 Available here: https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/counties/totals/
+
 Data sheet available here: https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2010-2019/co-est2019-alldata.pdf
+
 2019 county level census estimates.
 
 ### daily.csv
 Available here: https://covidtracking.com/api/v1/states/daily.csv
+
 Daily state level covid testing data.
 
 ### CountyHospitalCombined.csv, CovCountyHospitalTimeSeries.csv, and StateTestingTimeSeries.csv
