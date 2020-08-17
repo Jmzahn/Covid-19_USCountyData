@@ -35,6 +35,9 @@ Final combined dataset, a days X 3142(num of us counties+dc) long time series wi
 
 ## Code
 The python scripts have comments to explain which datasets they're responsible for generating.
+
 Feel free to use and edit them to tailor the datasets generated to your liking.
+
 There is also a helper function library in the main directory.
+
 Scripts can be ran by calling >python <scriptname>.py in the directory they reside in.
