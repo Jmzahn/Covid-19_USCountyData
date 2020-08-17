@@ -1,4 +1,8 @@
 #only run if CountyHospitalCombined.csv is not yet made, script will take a while to gather geolocation data because of API restrictions.
+
+#This python script combines together 2 of the data sets (Hospitals.csv, and co-est2019-alldata.csv) 
+# into one county wise dataset (CountyHospitalCombined.csv)
+
 #Jacob Zahn
 import sys
 
@@ -11,7 +15,6 @@ import lib
 
 
 Hospitals = lib.loadHospitals()
-USCountyCovidData = lib.loadUSCountiesCov()
 USCountyPopData = lib.loadCountyPopEst()
 
 #the most important information in Hospitals is COUNTY and BEDS
@@ -19,7 +22,7 @@ USCountyPopData = lib.loadCountyPopEst()
 #  other interesting columns is TRAUMA and HELIPAD
 
 hospitalCounties = Hospitals['COUNTY']#Only 1604 counties present
-hospitalStates = Hospitals['STATE']#we also need states to specify county
+hospitalStates = Hospitals['STATE']#we also need states to specify which county
 hospitalBeds = Hospitals['BEDS']#NAN are stored as -999 this needs changed. 662 nans
 hospitalTrauma = Hospitals['TRAUMA']#many changes need to be made before data is usable
 #^actually seems like most entries are not there so this may be useless information
@@ -56,7 +59,7 @@ hospitalStatesExpMask = (~hospitalStatesExp.isin(['Palau', 'American Samoa', 'No
 hospitalStatesExp = hospitalStatesExp.iloc[hospitalStatesExpMask]
 hospitalCounties = hospitalCounties.iloc[hospitalStatesExpMask]
 hospitalBeds = pd.Series(hospitalBeds.iloc[hospitalStatesExpMask],dtype=np.float)
-#hospitalTrauma = hospitalTrauma.iloc[hospitalStatesExpMask]
+#hospitalTrauma = hospitalTrauma.iloc[hospitalStatesExpMask] decided info was not worth effort
 hospitalHelipad = hospitalHelipad.iloc[hospitalStatesExpMask]
 hospitalOwner = hospitalOwner.iloc[hospitalStatesExpMask]
 

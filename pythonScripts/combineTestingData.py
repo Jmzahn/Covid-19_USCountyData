@@ -1,3 +1,8 @@
+#This script takes daily.csv (daily Covid Tracking Project testing data) and turns it
+# into StateTestingTimeSeries.csv a statewise populated series
+
+#run it again with an updated daily.csv to update to latest information
+
 #Jacob Zahn
 
 import sys
@@ -10,8 +15,8 @@ import datetime
 sys.path.append('..')
 import lib
 
-CCHTS = lib.loadCCHTimeSeries()
-CC = lib.loadUSCountiesCov()
+CCHTS = lib.loadCCHTimeSeries()#used to get state population data
+CC = lib.loadUSCountiesCov()#only used to get date information
 DST = lib.loadDailyStateTesting()
 
 #get date data

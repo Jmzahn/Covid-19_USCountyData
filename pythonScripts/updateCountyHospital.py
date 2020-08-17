@@ -1,3 +1,6 @@
+#if CountyHospitalCombined.csv already exists and one just wants to add features this script can be edited to do so.
+
+
 #Jacob Zahn
 import sys
 

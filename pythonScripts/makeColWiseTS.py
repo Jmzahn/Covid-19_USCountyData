@@ -1,3 +1,7 @@
+#This script combines and transposes CovCountyHospitalTimeSeries.csv, and StateTestingTimeSeries.csv
+# into MasterTimeSeries.csv a days X 3142(num of us counties+dc) long time series with variables stored as a proportion of population
+
+
 #Jacob Zahn
 
 import sys
@@ -130,4 +134,4 @@ dataDict = {
     'deaths' : deathsPerPopPerDay,
 }
 df = pd.DataFrame(dataDict)
-df.to_csv('../data/Final_data_view/MasterTimeSeries.csv.gz', index = False)
+df.to_csv('../data/Final_data_view/MasterTimeSeries.csv.gz', index = False)#you can remove .gz to get an uncrompress csv

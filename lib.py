@@ -5,7 +5,7 @@ import time
 import numpy as np
 import pandas as pd
 
-
+#a bunch of data loading functions
 
 #data from https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals
 def loadHospitals():
@@ -44,10 +44,11 @@ def loadMTS():
     df = pd.read_csv(os.path.dirname(__file__)+'/data/Final_data_view/MasterTimeSeries.csv.gz')
     return df
 
+#function for loading MTS and converting to tensors
 def loadNNData():
     
     MTS = loadMTS()
-    #only grab this many rows : 307916
+    #only grab this many rows : 307916 (counties*7*14)
     MTS = MTS.head(307916)
     Weeks=14
     Jump = 6
@@ -75,6 +76,7 @@ def loadNNData():
     targets = targets[Jump*COUNTIES*7:TRAIN_SPLIT].reshape(TRAIN_weeks*7,COUNTIES, len(targetsNames))
     
     return features, targets, validate_features, validate_targets, dateRange   
+
 
 class Location:#simple class for holding the important location data obtained from Nominatim
     def __init__(self, name, lat, lon):

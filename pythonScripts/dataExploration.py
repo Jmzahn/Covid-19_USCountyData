@@ -1,3 +1,6 @@
+#Simple script for poking around CovCountyHospitalTimeSeries.csv
+
+
 #Jacob Zahn
 
 import sys
@@ -20,8 +23,8 @@ nonProf = CCH['nonProf'].to_numpy()
 private = CCH['private'].to_numpy()
 governm = CCH['governm'].to_numpy()
 totalHosp = nonProf + private + governm
-casesLast = CCH['c2020-08-14'].to_numpy()
-deathsLast = CCH['d2020-08-14'].to_numpy()
+casesLast = CCH['c2020-08-14'].to_numpy()#these have to be set manually
+deathsLast = CCH['d2020-08-14'].to_numpy()#these have to be set manually
 
 bedsZ = stats.zscore(beds)
 populationZ = stats.zscore(population)

@@ -1,3 +1,8 @@
+#This script combines CountyHospitalCombined.csv and us-counties.csv (NYT covid cases and deaths daily dataset)
+# into CovCountyHospitalTimeSeries.csv a county wise dataset
+
+#run it again with an updated us-counties.csv to update the dataset to the latest date range
+
 #Jacob Zahn
 
 import sys
