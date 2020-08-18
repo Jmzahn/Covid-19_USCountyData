@@ -40,4 +40,4 @@ Feel free to use and edit them to tailor the datasets generated to your liking.
 
 There is also a helper function library in the main directory.
 
-Scripts can be ran by calling >python <scriptname>.py in the directory they reside in.
+Scripts can be ran by calling >python \<scriptname\>.py in the directory they reside in.
